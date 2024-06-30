@@ -26,6 +26,7 @@ const AddTodo = ({addTodo}) => {
         <form className='grid grid-cols-3 gap-2' onSubmit={handleSubmit}>
             <input
                 type="text"
+                name="addTodo"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Add Todo"
