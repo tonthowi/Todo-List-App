@@ -1,5 +1,5 @@
 import TodoItem from "./TodoItem";
-import {FaceFrownIcon} from '@heroicons/react/24/outline'
+import { AnimatePresence } from "framer-motion";
 
 const TodoList = ({todos = [], toggleComplete, deleteTodo}) => {
     if (todos.length === 0) {
@@ -12,6 +12,7 @@ const TodoList = ({todos = [], toggleComplete, deleteTodo}) => {
     }
     return (
         <ul className="mx-auto divide-y divide-gray-100">
+            <AnimatePresence>
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}
@@ -20,6 +21,7 @@ const TodoList = ({todos = [], toggleComplete, deleteTodo}) => {
                     deleteTodo={deleteTodo}
                 />
             ))}
+        </AnimatePresence>
         </ul>
     )
 }

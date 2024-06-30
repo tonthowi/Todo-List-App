@@ -1,4 +1,5 @@
 import { CheckCircleIcon, TrashIcon } from '@heroicons/react/24/solid'
+import { motion } from 'framer-motion';
 
 const DeleteButton = ({ handleClick }) => {
 
@@ -19,7 +20,13 @@ const DeleteButton = ({ handleClick }) => {
 
 const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li className="relative flex items-center justify-between gap-x-2 pl-0 pr-3 hover:bg-gray-50">
+    <motion.li
+        className="relative flex items-center justify-between gap-x-2 pl-0 pr-3 hover:bg-gray-50"
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3 }}
+    >
       <div className="relative flex items-center py-6 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
 
         <div className="ml-3 flex h-6">
@@ -32,7 +39,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
             /> */}
 
             <CheckCircleIcon
-                className={`cursor-pointer h-7 w-7 text-grey-200 ${todo.completed ? 'line-through text-green-600' : ''}`}
+                className={`cursor-pointer h-7 w-7 ${todo.completed ? 'transition ease-in-out duration-150 text-green-600' : 'text-gray-300'}`}
                 id={todo.text}
                 type="checkbox"
                 checked={todo.completed}
@@ -43,14 +50,14 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
             <span
             htmlFor={todo.text}
             onClick={() => toggleComplete(todo.id)}
-            className={`cursor-pointer font-medium text-gray-900 ${todo.completed ? 'line-through text-green-600' : ''}`}
+            className={`cursor-pointer font-medium ${todo.completed ? 'line-through text-green-600' : 'text-gray-900'}`}
             >
             {todo.text}
             </span>
         </div>
       </div>
       <DeleteButton handleClick={() => deleteTodo(todo.id)} />
-    </li>
+    </motion.li>
  
   );
 };
