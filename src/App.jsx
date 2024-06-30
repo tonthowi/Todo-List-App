@@ -25,7 +25,7 @@ function App() {
   }
 
   return (
-    <div className='mx-auto max-w-4xl'>
+    <div className='mx-auto max-w-4xl sm:max-w-full'>
       <Header />
       <AddTodo addTodo={addTodo} />
       <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />

@@ -22,7 +22,7 @@ const AddTodo = ({addTodo}) => {
     }
 
     return (
-        <div className='m-8'>
+        <div className='mt-8 mb-8'>
         <form className='flex lg:gap-x-4 gap-y-4 lg:flex-row md:flex-col flex-col' onSubmit={handleSubmit}>
             <input
                 type="text"

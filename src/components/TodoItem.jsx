@@ -4,7 +4,7 @@ const DeleteButton = ({ handleClick }) => {
 
     return (
         <TrashIcon
-        className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md w-8 h-8 bg-white p-2 text-sm font-semibold text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block cursor-pointer"
+        className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md w-8 h-8 bg-white p-2 text-sm font-semibold text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 flex-none sm:block cursor-pointer"
         onClick={handleClick}
         type="button"    
         />
@@ -19,8 +19,8 @@ const DeleteButton = ({ handleClick }) => {
 
 const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li className="relative flex items-center justify-between gap-x-6 px-4 py-3 hover:bg-gray-50 sm:px-6">
-      <div className="relative flex items-center py-4 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
+    <li className="relative flex items-center justify-between gap-x-2 pl-0 pr-3 hover:bg-gray-50">
+      <div className="relative flex items-center py-6 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
 
         <div className="ml-3 flex h-6">
             {/* <input
@@ -39,7 +39,7 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
                 onClick={() => toggleComplete(todo.id)}
             />
         </div>
-        <div className="min-w-0 flex-1 text-base leading-6 px-4">
+        <div className="min-w-0 text-base text-start leading-6 px-2">
             <span
             htmlFor={todo.text}
             onClick={() => toggleComplete(todo.id)}
