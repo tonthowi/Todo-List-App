@@ -1,24 +1,28 @@
-import { CheckCircleIcon } from '@heroicons/react/24/solid'
+import { CheckCircleIcon, TrashIcon } from '@heroicons/react/24/solid'
 
-const Button = ({handleClick, text}) => {
+const DeleteButton = ({ handleClick }) => {
 
     return (
-        <button
-            className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md bg-white px-4 py-0.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
-            onClick={handleClick}
-            type="button"
-        >
-            {text}
-        </button>
+        <TrashIcon
+        className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md w-8 h-8 bg-white p-2 text-sm font-semibold text-gray-500 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block cursor-pointer"
+        onClick={handleClick}
+        type="button"    
+        />
+        // <button
+        //     className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block"
+        //     onClick={handleClick}
+        //     type="button"
+        // >
+        // </button>
     )
 }
 
 const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
   return (
-    <li className="relative flex justify-between gap-x-6 px-4 py-3 hover:bg-gray-50 sm:px-6">
-      <div className="relative flex items-start py-4 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
+    <li className="relative flex items-center justify-between gap-x-6 px-4 py-3 hover:bg-gray-50 sm:px-6">
+      <div className="relative flex items-center py-4 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
 
-        <div className="ml-3 flex h-6 items-center">
+        <div className="ml-3 flex h-6">
             {/* <input
             className="cursor-pointer"
             id={todo.text}
@@ -35,7 +39,6 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
                 onClick={() => toggleComplete(todo.id)}
             />
         </div>
-
         <div className="min-w-0 flex-1 text-base leading-6 px-4">
             <span
             htmlFor={todo.text}
@@ -46,8 +49,9 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
             </span>
         </div>
       </div>
-      <Button handleClick={() => deleteTodo(todo.id)} text={"Delete"} />
+      <DeleteButton handleClick={() => deleteTodo(todo.id)} />
     </li>
+ 
   );
 };
 

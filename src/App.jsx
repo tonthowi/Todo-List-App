@@ -25,11 +25,11 @@ function App() {
   }
 
   return (
-    <>
+    <div className='mx-auto max-w-4xl'>
       <Header />
       <AddTodo addTodo={addTodo} />
       <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
-    </>
+    </div>
   )
 }
 
