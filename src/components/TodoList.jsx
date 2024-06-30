@@ -3,13 +3,13 @@ import TodoItem from "./TodoItem";
 const TodoList = ({todos = [], toggleComplete, deleteTodo}) => {
     if (todos.length === 0) {
         return (
-            <div className="text-center text-base text-gray-700 py-8">
+            <div className="text-center text-base text-gray-700 py-6">
                 No tasks to show
             </div>
         )
     }
     return (
-        <ul className="mx-auto max-w-3xl divide-y divide-gray-100">
+        <ul className="mx-auto divide-y divide-gray-100">
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}

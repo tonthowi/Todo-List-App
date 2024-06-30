@@ -4,7 +4,7 @@ const Button = ({handleClick, text}) => {
 
     return (
         <button
-            className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded-lg"
+            className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 bg-slate-900 hover:bg-slate-700 text-white font-bold py-2 px-6 rounded-lg flex-none"
             onClick={handleClick}
             type="submit"
         >
@@ -22,17 +22,17 @@ const AddTodo = ({addTodo}) => {
     }
 
     return (
-        <div className='mx-auto max-w-3xl p-8'>
-        <form className='grid grid-cols-3 gap-2' onSubmit={handleSubmit}>
+        <div className='m-8'>
+        <form className='flex lg:gap-x-4 gap-y-4 lg:flex-row md:flex-col flex-col' onSubmit={handleSubmit}>
             <input
                 type="text"
                 name="addTodo"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Add Todo"
-                className="col-span-2 border-2 border-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition ease-in-out focus:bg-opacity-0 delay-50"
+                placeholder="Add a new todo..."
+                className="flex-auto border-2 border-gray-200 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent transition ease-in-out focus:bg-opacity-0 delay-50"
             />
-            <Button text={"Add Todo"} />
+            <Button text={"Add Todo "} />
         </form>
         </div>
     )
