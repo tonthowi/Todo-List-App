@@ -28,6 +28,13 @@ const AddTodo = ({ addTodo }) => {
     setError('');
   };
 
+  const handleInputChange = (e) => {
+    setInput(e.target.value);
+    if (error) {
+      setError('');
+    }
+  }
+
   return (
     <div className='mt-8 mb-8'>
       <form className='flex lg:gap-x-4 gap-y-4 lg:flex-row md:flex-col flex-col' onSubmit={handleSubmit}>
@@ -36,10 +43,10 @@ const AddTodo = ({ addTodo }) => {
             type="text"
             name="addTodo"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Add a new todo..."
+            onChange={handleInputChange}
+            placeholder={error ? 'Please enter a todo' : 'Add a new todo'}
             className={`border-2 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:border-transparent transition ease-in-out focus:bg-opacity-0 delay-50 ${
-              error ? 'border-red-500 focus:ring-red-500' : 'border-gray-200 focus:ring-slate-900'
+              error ? 'border-red-500 focus:ring-red-500 placeholder-red-600' : 'border-gray-200 focus:ring-slate-900'
             }`}
           />
           {error && (
@@ -49,7 +56,6 @@ const AddTodo = ({ addTodo }) => {
             />
           )}
         </div>
-        {error && <p className="text-red-600">{error}</p>}
         <Button text={"Add Todo"} />
       </form>
     </div>
