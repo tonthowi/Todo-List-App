@@ -9,12 +9,6 @@ const DeleteButton = ({ handleClick }) => {
         onClick={handleClick}
         type="button"    
         />
-        // <button
-        //     className="transition ease-in-out hover:-translate-y-0.2 hover:scale-105 rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:block"
-        //     onClick={handleClick}
-        //     type="button"
-        // >
-        // </button>
     )
 }
 
@@ -30,13 +24,6 @@ const TodoItem = ({ todo, toggleComplete, deleteTodo }) => {
       <div className="relative flex items-center py-6 transition ease-in-out hover:-translate-y-0.2 hover:scale-105">
 
         <div className="ml-3 flex h-6">
-            {/* <input
-            className="cursor-pointer"
-            id={todo.text}
-            type="checkbox"
-            checked={todo.completed}
-            onChange={() => toggleComplete(todo.id)}
-            /> */}
 
             <CheckCircleIcon
                 className={`cursor-pointer h-7 w-7 ${todo.completed ? 'transition ease-in-out duration-150 text-green-600' : 'text-gray-300'}`}

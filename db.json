@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "id": "06fc",
+      "text": "Kirim macbook ke kantor AccelByte",
+      "completed": true
+    },
+    {
+      "id": "f825",
+      "text": "Kerjain task CW-4514: Update the Early Age Gate toggle functionality label wordings",
+      "completed": false
+    },
+    {
+      "id": "1780",
+      "text": "Mulai kerjain task JCS-674: Design profanity filter default page",
+      "completed": false
+    },
+    {
+      "id": "f4b5",
+      "text": "Gaming time!",
+      "completed": false
+    }
+  ]
+}

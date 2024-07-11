@@ -13,15 +13,15 @@ const TodoList = ({todos = [], toggleComplete, deleteTodo}) => {
     return (
         <ul className="mx-auto divide-y divide-gray-100">
             <AnimatePresence>
-            {todos.map((todo) => (
-                <TodoItem
-                    key={todo.id}
-                    todo={todo}
-                    toggleComplete={toggleComplete}
-                    deleteTodo={deleteTodo}
-                />
-            ))}
-        </AnimatePresence>
+                {todos.map((todo) => (
+                    <TodoItem
+                        key={todo.id}
+                        todo={todo}
+                        toggleComplete={toggleComplete}
+                        deleteTodo={deleteTodo}
+                    />
+                ))}
+            </AnimatePresence>
         </ul>
     )
 }
