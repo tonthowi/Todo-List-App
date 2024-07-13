@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://todo-list-app-backend-red.vercel.app/todos'
+const baseUrl = 'https://todo-list-app-backend.vercel.app/todos'
 
 const getAllTodos = () => {
     const request = axios.get(baseUrl)
