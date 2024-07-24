@@ -17,6 +17,7 @@ function App() {
   
   const addTodo = (text) => {
     const newTodo = {
+      id: Date.now(),
       text,
       completed: false
     }
